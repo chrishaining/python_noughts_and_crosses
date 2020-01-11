@@ -32,17 +32,16 @@ def set_square(player_choice):
     else:
         print("You've entered an invalid choice.")
 
-# check if a square has been used
-def check_if_square_has_been_used():
-    if board.size > 0:
-     if np.any(board == "X"):
-        return "That's already been used"
+# check if a square has been used. If it was a list, I'd do a for loop, but maybe I can use Numpy's any method
+def check_if_square_has_been_used(square):
+    # if board[square] == "X":
+        print("That's already been used")
 
 #get the user to add a square to the board
 def add_a_square():
     print("We're going to play noughts and crosses.")
     square = input("Pick a square: ")
-    check_if_square_has_been_used()
+    check_if_square_has_been_used(square)
     set_square(square)
     print(board)
 

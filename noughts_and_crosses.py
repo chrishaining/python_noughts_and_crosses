@@ -20,9 +20,6 @@ coord5 = np.argwhere(board == "5")
 coord6 = np.argwhere(board == "6")
 coord7 = np.argwhere(board == "7")
 coord8 = np.argwhere(board == "8")
-
-
-
 # coord1 = board[0, 1] 
 # coord2 = board[0, 2] 
 # coord3 = board[1, 0] 
@@ -77,17 +74,20 @@ def set_square(player_choice):
 
 # check if a square has been used. If it was a list, I'd do a for loop, but maybe I can use a Numpy method
 def check_if_square_has_been_used(square):
-    # index = np.argwhere(board == square)
-    # print("Index: {}".format(index))
-    print("Square: {}".format(square))
-    print(type(square))
+    index = np.argwhere(board == square)
+    print("Index: {}".format(index))
+    print("You picked square: {}".format(square))
+    # print(type(square))
     for row in board:
         for cell in row:
             # print("Position: {}".format(cell))
-            print(type(cell))
-            if cell == square:
+            # print(type(cell))
+            if cell[0] == index:
+                # print("Hell {}".format(cell[0]))
+                # if cell[0] == "X":
+                    # print(cell)
                 print("already taken")
-                return True
+                # return True
         # if position == index:
         #     if position == "X":
         #         print("Already taken")
